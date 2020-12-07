@@ -1,0 +1,11 @@
+.idea
+vendor
+/modules
+node_modules
+temp/*
+log/*
+app/config/server/local.neon
+app/config/google_service_account.json
+www/upload/*
+www/dist/*
+/resources

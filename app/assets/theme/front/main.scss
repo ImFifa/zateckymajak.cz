@@ -1,0 +1,10 @@
+html,
+body {
+	@include media-breakpoint-down("md") {
+		font-size: 14px;
+	}
+}
+
+.text-underline {
+	text-decoration: underline;
+}
