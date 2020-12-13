@@ -13,3 +13,8 @@ services:
 parameters:
 	customTemplatesDir: %appDir%/FrontModule/templates/
 
+migrations:
+	groups:
+		project.structure:
+			directory: %appDir%/migrations/structure
+

@@ -1,6 +1,12 @@
-html,
-body {
-	@include media-breakpoint-down("md") {
-		font-size: 14px;
-	}
+section {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+.logo {
+	max-width: 200px;
+	height: auto;
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c9d4effcefb4fd4fb8b91bf5d76d9f61",
+    "content-hash": "a02da08822dc86962d872227651b2e1e",
     "packages": [
         {
             "name": "brick/date-time",
@@ -1761,12 +1761,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/orisai/auth.git",
-                "reference": "b1e3107191d24079162977cf5afb649b4af55cbd"
+                "reference": "0bbd5fd53b01cf3de885f87ffa2c18269820eee3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orisai/auth/zipball/b1e3107191d24079162977cf5afb649b4af55cbd",
-                "reference": "b1e3107191d24079162977cf5afb649b4af55cbd",
+                "url": "https://api.github.com/repos/orisai/auth/zipball/0bbd5fd53b01cf3de885f87ffa2c18269820eee3",
+                "reference": "0bbd5fd53b01cf3de885f87ffa2c18269820eee3",
                 "shasum": ""
             },
             "require": {
@@ -1827,7 +1827,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-07T17:01:53+00:00"
+            "time": "2020-12-09T08:15:46+00:00"
         },
         {
             "name": "orisai/exceptions",
@@ -1901,12 +1901,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/orisai/nette-di.git",
-                "reference": "72d5b906c7d90dcf8015421037dc9860e3840ba9"
+                "reference": "870fb63a27953781d75aee8b267ee4ab51beea5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orisai/nette-di/zipball/72d5b906c7d90dcf8015421037dc9860e3840ba9",
-                "reference": "72d5b906c7d90dcf8015421037dc9860e3840ba9",
+                "url": "https://api.github.com/repos/orisai/nette-di/zipball/870fb63a27953781d75aee8b267ee4ab51beea5b",
+                "reference": "870fb63a27953781d75aee8b267ee4ab51beea5b",
                 "shasum": ""
             },
             "require": {
@@ -1964,7 +1964,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-03T17:32:58+00:00"
+            "time": "2020-12-08T14:21:54+00:00"
         },
         {
             "name": "orisai/utils",
@@ -1972,12 +1972,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/orisai/utils.git",
-                "reference": "c38039dd2b704d5b29fd35c5d7c32b8e04a0e228"
+                "reference": "4830432e69c49406368678e0c94e38ad8d156c24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orisai/utils/zipball/c38039dd2b704d5b29fd35c5d7c32b8e04a0e228",
-                "reference": "c38039dd2b704d5b29fd35c5d7c32b8e04a0e228",
+                "url": "https://api.github.com/repos/orisai/utils/zipball/4830432e69c49406368678e0c94e38ad8d156c24",
+                "reference": "4830432e69c49406368678e0c94e38ad8d156c24",
                 "shasum": ""
             },
             "require": {
@@ -2032,7 +2032,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-07T12:19:52+00:00"
+            "time": "2020-12-08T11:06:45+00:00"
         },
         {
             "name": "psr/container",
@@ -2121,7 +2121,7 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:K2D-CZ/core.git",
-                "reference": "4e400ee93389aca09f6f2c6a09de88137516fa4e"
+                "reference": "c84fc0811aa3910eca23bc7c9b54298808aed82b"
             },
             "require": {
                 "contributte/console": "^0.8.0",
@@ -2148,7 +2148,7 @@
                 "cms",
                 "nette"
             ],
-            "time": "2020-12-07T14:56:34+00:00"
+            "time": "2020-12-07T22:36:12+00:00"
         },
         {
             "name": "simple-cms/file-module",
@@ -2176,6 +2176,60 @@
                 "nette"
             ],
             "time": "2020-11-10T21:24:21+00:00"
+        },
+        {
+            "name": "simple-cms/gallery-module",
+            "version": "v2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:K2D-CZ/gallery.git",
+                "reference": "664b63a3310ece92a7a3153992f373965d126c5f"
+            },
+            "require": {
+                "php": ">= 7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "SimpleCMS - Gallery Module",
+            "keywords": [
+                "cms",
+                "nette"
+            ],
+            "time": "2020-11-10T21:30:20+00:00"
+        },
+        {
+            "name": "simple-cms/news-module",
+            "version": "v2.x-dev",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:K2D-CZ/news.git",
+                "reference": "1e3fab0feaffd5029977fa454b09b08bd86793b3"
+            },
+            "require": {
+                "php": ">= 7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "SimpleCMS - News Module",
+            "keywords": [
+                "cms",
+                "nette"
+            ],
+            "time": "2020-11-19T20:46:17+00:00"
         },
         {
             "name": "symfony/console",
@@ -3828,7 +3882,9 @@
     "stability-flags": {
         "simple-cms/box-module": 20,
         "simple-cms/core-module": 20,
-        "simple-cms/file-module": 20
+        "simple-cms/file-module": 20,
+        "simple-cms/news-module": 20,
+        "simple-cms/gallery-module": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

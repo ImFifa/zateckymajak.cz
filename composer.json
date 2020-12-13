@@ -1,10 +1,17 @@
 {
+	"name": "filipurban.cz/zateckymajak.cz",
+	"description": "zateckymajak.cz",
+	"type": "project",
+	"license": "MIT",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "repositories": [
     { "type": "git", "url": "git@github.com:K2D-CZ/core.git" },
+	{ "type": "git", "url": "git@github.com:K2D-CZ/admin.git" },
     { "type": "git", "url": "git@github.com:K2D-CZ/box.git" },
-    { "type": "git", "url": "git@github.com:K2D-CZ/file.git" }
+	{ "type": "git", "url": "git@github.com:K2D-CZ/file.git" },
+  	{ "type": "git", "url": "git@github.com:K2D-CZ/news.git" },
+  	{ "type": "git", "url": "git@github.com:K2D-CZ/gallery.git" }
   ],
   "require": {
     "php": ">= 7.4",
@@ -17,7 +24,9 @@
     "orisai/nette-di": "^1.0.0",
     "simple-cms/box-module": "v2.x-dev",
     "simple-cms/core-module": "v2.x-dev",
-    "simple-cms/file-module": "v2.x-dev",
+	"simple-cms/file-module": "v2.x-dev",
+	"simple-cms/news-module": "v2.x-dev",
+	"simple-cms/gallery-module": "v2.x-dev",
     "symfony/dotenv": "^5.1",
     "tracy/tracy": "^2.7.6"
   },
