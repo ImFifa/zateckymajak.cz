@@ -10,4 +10,24 @@ class HomepagePresenter extends BasePresenter
 
 	}
 
+	public function renderAuthors(): void
+	{
+
+	}
+
+	public function renderContact(): void
+	{
+
+	}
+
+	public function renderSections(): void
+	{
+
+	}
+
+	public function renderSitemap(): void
+	{
+
+	}
+
 }

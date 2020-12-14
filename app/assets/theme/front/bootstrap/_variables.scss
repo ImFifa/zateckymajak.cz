@@ -4,6 +4,10 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
+$light-green: #BEF3A4;
+$dark-green: #437529;
+$background-gray: #F2F2F2;
+
 
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
@@ -33,14 +37,14 @@ $grays: map-merge(
 		$grays
 );
 
-$blue:    #007bff !default;
+$blue:    #4BA1D1 !default;
 $indigo:  #6610f2 !default;
-$purple:  #6f42c1 !default;
+$purple:  #9A64B4 !default;
 $pink:    #e83e8c !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #28a745 !default;
+$red:     #DD4545 !default;
+$orange:  #E59B0B !default;
+$yellow:  #D3B137 !default;
+$green:   #83BE67 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
@@ -744,7 +748,7 @@ $navbar-light-color:                rgba($black, .5) !default;
 $navbar-light-hover-color:          rgba($black, .7) !default;
 $navbar-light-active-color:         rgba($black, .9) !default;
 $navbar-light-disabled-color:       rgba($black, .3) !default;
-$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'><path stroke='#{$navbar-light-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
+$navbar-light-toggler-icon-bg:      url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 30 30'><path stroke='#{$light-green}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
 $navbar-light-toggler-border-color: rgba($black, .1) !default;
 
 $navbar-light-brand-color:                $navbar-light-active-color !default;
