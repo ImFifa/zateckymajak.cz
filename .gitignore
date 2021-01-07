@@ -9,3 +9,4 @@ app/config/google_service_account.json
 www/upload/*
 www/dist/*
 /resources
+.data
