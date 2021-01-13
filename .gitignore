@@ -10,3 +10,4 @@ www/upload/*
 www/dist/*
 /resources
 .data
+.docker
