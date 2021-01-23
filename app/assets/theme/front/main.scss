@@ -12,39 +12,52 @@ h1, h2, h3, .navbar-brand, .note, .heading-section, .sec, .nav-link, .created {
 }
 
 .navbar {
-	background: $light-green;
-	max-height: 100px;
-	padding: 0 0 0 1rem;
+	padding: 0;
 
 	.navbar-brand {
+		padding: 1rem;
+		background: $light-green;
 		display: flex;
 		flex-direction: row;
 		justify-content: left;
 		align-items: flex-end;
 		font-size: 1.7rem;
 		font-weight: 700;
+		width: 100%;
+		margin-right: 0;
 
-		svg {
-			height: 70px;
-			width: auto;
+		img {
+			height: auto;
+			width: 100%;
 			margin-right: 10px;
-		}
-
-		.navbar-title {
-			position: relative;
-			top: 7px;
+			max-width: 300px;
 		}
 	}
 
 	.navbar-toggler {
-		display: inline-block;
+		height: 100%;
 		background: $dark-green;
-		height: 100px;
-		width: 80px;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 70px;
 		border-radius: 0;
 
 		.navbar-toggler-icon {
-			margin-top: 20px;
+			margin-top: 22px;
+		}
+	}
+
+	.show {
+		background: #f2f2f2;
+	}
+
+	.navbar-nav {
+		padding: 1rem;
+
+		.nav-link {
+			font-size: 1.15rem;
+			color: #222;
 		}
 	}
 }
