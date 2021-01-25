@@ -1,0 +1,39 @@
+{block content}
+
+<section class="article-page" id="article-page">
+	<div class="container">
+		<h1 n:block="title">{$article->title}</h1>
+		<span>{$article->created|date:'d. m. Y'}</span>
+		<hr>
+		<div class="content">
+			{$article->perex|noescape}
+		</div>
+		<img n:if="$article->cover != NULL" src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="lazyload img-fluid" alt="{$article->title}">
+
+		<div class="content">
+			{$article->content|noescape}
+		</div>
+
+		<div n:if="$article->gallery_id != NULL" class="galerie">
+			<h3 id="galerie">Galerie</h3>
+			}
+			<div class="row no-gutters">
+				{foreach $images as $image}
+					{if $iterator->counter < 5}
+						<a href="{$basePath}/upload/galleries/{$article->gallery_id}/{$image->name}" class="col-xsm-6 gal-img col-lg-3" alt="{$article->title}">
+							<img data-src="{$basePath}/upload/galleries/{$article->gallery_id}/thumbs/{$image->name}" class="lazyload img-fluid" alt="{$image->title}">
+							<div n:if="$iterator->counter === 4" class="n-of-photos">{count($images) - 3}
+								<small>{if count($images) <= 7}další fotografie{else}dalších fotografií{/if}</small>
+							</div>
+						</a>
+					{else}
+						<a href="{$basePath}/upload/galleries/{$article->gallery_id}/{$image->name}" data-lightbox="gallery" data-title="{$image->title}"></a>
+					{/if}
+				{/foreach}
+			</div>
+		</div>
+
+
+
+	</div>
+</section>

@@ -1,0 +1,13 @@
+{block #title}
+    <i class="icon mdi mdi-calendar-check"></i> Události
+{/block}
+
+{block #buttons}
+    <a n:href="Event:edit" class="btn btn-success">Přidat událost</a>
+{/block}
+
+{block content}
+    <div class="m-admin-fix bg-white pb-2">
+        {control eventGrid}
+    </div>
+{/block}

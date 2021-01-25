@@ -13,6 +13,7 @@ h1, h2, h3, .navbar-brand, .note, .heading-section, .sec, .nav-link, .created {
 
 .navbar {
 	padding: 0;
+	align-items: stretch;
 
 	.navbar-brand {
 		padding: 1rem;
@@ -23,24 +24,27 @@ h1, h2, h3, .navbar-brand, .note, .heading-section, .sec, .nav-link, .created {
 		align-items: flex-end;
 		font-size: 1.7rem;
 		font-weight: 700;
-		width: 100%;
+		width: calc(100% - 70px);
 		margin-right: 0;
 
 		img {
 			height: auto;
 			width: 100%;
 			margin-right: 10px;
-			max-width: 300px;
+			max-width: 220px;
 		}
 	}
 
-	.navbar-toggler {
-		height: 100%;
+	.navbar-btn {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		background: $dark-green;
-		position: absolute;
-		right: 0;
-		top: 0;
 		width: 70px;
+	}
+
+	.navbar-toggler {
+		border: none;
 		border-radius: 0;
 
 		.navbar-toggler-icon {
@@ -128,7 +132,13 @@ section {
 	}
 
 	.most-read {
+		margin-top: 4rem;
+		padding: 3rem 1.5rem;
 		background-color: $white;
+
+		.heading {
+			margin: 2rem 0;
+		}
 	}
 }
 

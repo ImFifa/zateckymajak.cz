@@ -1,0 +1,37 @@
+{block #title}
+    {if $event != null}
+        Přihlášení na <b>{$event->name}</b>
+    {/if}
+{/block}
+
+{block #buttons}
+    <a n:if="isset($event)" n:href=":Project:Event:show $event->slug" class="btn btn-info">Zobrazit událost na webu</a>
+    <a n:href="default" class="btn btn-light"><i class="fa fa-arrow-left"></i> Zpět</a>
+{/block}
+
+{block #content}
+    {if ($participants != NULL)}
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Jméno a příjmení</th>
+                <th scope="col">Email</th>
+                <th scope="col">Smazat</th>
+            </tr>
+            </thead>
+            <tbody>
+        {foreach $participants as $participant}
+            <tr>
+                <th scope="row">{$iterator->counter}</th>
+                <td>{$participant->name} {$participant->surname}</td>
+                <td>{$participant->email}</td>
+                <td><a data-ajax="on" n:href="deleteParticipant! $participant->id" class="btn btn-sm btn-outline-danger tw-ajax" data-confirm="modal">X</a></td>
+            </tr>
+        {/foreach}
+            </tbody>
+        </table>
+    {else}
+
+    {/if}
+{/block}
