@@ -53,7 +53,7 @@ h1, h2, h3, .navbar-brand, .note, .heading-section, .sec, .nav-link, .created {
 	}
 
 	.show {
-		background: #f2f2f2;
+		background: #e3e3e3;
 	}
 
 	.navbar-nav {
@@ -79,30 +79,24 @@ section {
 	}
 
 	.newest-article {
-		padding-top: 4rem;
-
-		.article-content {
-			h2 {
-				margin-bottom: 1.5rem;
-			}
-		}
+		margin-top: 2rem;
 	}
 
 	article {
-		position: relative;
+		background-position: center;
 		background-size: cover;
+		position: relative;
 		min-height: 250px;
 		color: $white;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-end;
-		padding: .7rem;
+		display: grid;
+		margin-bottom: 3rem;
 		border-radius: .2rem;
 
 		.article-section {
 			position: absolute;
 			top: -5px;
 			left: -5px;
+			z-index: 100;
 			border-radius: 50%;
 			width: 46px;
 			height: 46px;
@@ -115,18 +109,23 @@ section {
 				max-height: 30px;
 			}
 		}
-
 		.article-content {
 			border-radius: .2rem;
-			background-color: rgba($gray-900, .55);
+			background-color: rgba($gray-900, .65);
 			font-size: 1.1rem;
 			line-height: 150%;
-			padding: .7rem;
+			padding: 1.2rem;
+			color: #eee;
+			transition: .2s ease-in-out;
+
+			&:hover {
+				color: $white;
+			}
 
 			h2 {
-				font-size: 1.8rem;
+				font-size: 1.7rem;
 				font-weight: 700;
-				margin-bottom: 0rem;
+				margin: 1.8rem 0 1.5rem;
 			}
 		}
 	}
@@ -138,6 +137,10 @@ section {
 
 		.heading {
 			margin: 2rem 0;
+
+			img {
+				margin-bottom: 1rem;
+			}
 		}
 	}
 }
@@ -147,18 +150,21 @@ section {
 	background-color: $white;
 
 	.sec {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 
-		font-weight: 700;
-		padding: 1rem;
-		margin: .5rem 1rem;
-		border-radius: .2rem;
-		color: $white;
+		.bg {
+			margin: .5rem 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			font-weight: 700;
+			padding: 1rem;
+			border-radius: .2rem;
+			color: $white;
+		}
 
-		svg {
+		img {
+			margin: .5rem 1rem;
 			fill: $white;
 			max-width: 80px;
 			max-height: 80px;
@@ -192,6 +198,29 @@ footer {
 
 	.menu, .sections, .socials, .newsletter {
 		margin-bottom: 2rem;
+	}
+
+	h3 {
+		text-transform: uppercase;
+		font-size: 1.3rem;
+		font-weight: 800;
+	}
+
+	ul {
+		list-style-type: none;
+
+		li {
+			a {
+				color: #444;
+				text-decoration: underline;
+				transition: all .2s ease-in-out;
+
+				&:hover {
+					color: #000;
+					text-decoration: none;
+				}
+			}
+		}
 	}
 
 	.socials {

@@ -2,12 +2,21 @@
 
 namespace App\FrontModule\Presenters;
 
+use Nette\Utils\Strings;
+
 class HomepagePresenter extends BasePresenter
 {
 
 	public function renderDefault(): void
 	{
-		$this->template->articles = $this->repository->new->getPublicNews('cs')->limit(5);
+		$articles = $this->repository->new->getPublicNews('cs')->limit(5);
+		$this->template->articles = $articles;
+
+		foreach ($articles as $article) {
+			$category[] = $this->repository->category->getCategoryNameById($article->category_id);
+		}
+		$this->template->article_category = $category;
+
 		$this->template->categories = $this->repository->category->getCategories();
 	}
 
