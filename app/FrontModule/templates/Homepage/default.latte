@@ -1,31 +1,42 @@
 {block #content}
 
-<main id="articles">
-	<div class="container">
+<main id="articles" class="container">
 		<div class="note">Novinky, pozvánky, zprávy - webové stránky všech Žatečanů</div>
 
-		<div class="row">
-			<div class="col-lg-9 row">
-				{foreach $articles as $article}
-					<div class="{if ($iterator->first)}col-lg-8{else}col-lg-4{/if}">
-						<article style="
-						{if $article->cover !== NULL}
-								background-image: url('{$basePath}/upload/news/{$article->id}/{$article->cover}')
-					 	{else}
-								background: #fff;
-					 	{/if}"
-						class="{if ($iterator->first)}newest-article{/if}">
-							<a n:href="Section:default $article_category[$iterator->counter-1]->slug" class="article-section bg-{$article_category[$iterator->counter-1]->color}"><img src="{$basePath}/dist/img/{$article_category[$iterator->counter-1]->slug}.svg" alt="{$article_category[$iterator->counter-1]->name}"></a>
-							<a n:href="Section:article $article_category[$iterator->counter-1]->slug, $article->slug" class="article-content">
-								<h2>{$article->title}</h2>
-								{$article->perex|stripHtml|noescape}
-							</a>
-						</article>
-					</div>
-				{/foreach}
-			</div>
+		{foreach $articles as $article}
+			{if $iterator->first}
+				<article class="newest-article">
+					<a n:href="Section:default $article_category[$iterator->counter-1]->slug" class="article-section bg-{$article_category[$iterator->counter-1]->color}" title="{$article_category[$iterator->counter-1]->name}"><img src="{$basePath}/dist/img/{$article_category[$iterator->counter-1]->slug}.svg" alt="{$article_category[$iterator->counter-1]->name}"></a>
+					<a n:href="Section:article $article_category[$iterator->counter-1]->slug, $article->slug" class="article-content" style="background: url('{$basePath}/upload/news/{$article->id}/{$article->cover}'); background-size: cover; background-position: center center; justify-content: flex-end;">
+						<div class="article-text" style="background: rgba(255,255,255,.6); padding-bottom: 2.5rem;">
+							<h2 class="article-new">{$article->title}</h2>
+							<div class="article-perex" n:if="$iterator->first">{$article->perex|stripHtml|noescape}</div>
+						</div>
+						<span class="article-date">{$article->created|date:'d. m. Y'}</span>
+					</a>
+				</article>
+			{else}
+				<article>
+					<a n:href="Section:default $article_category[$iterator->counter-1]->slug" class="article-section bg-{$article_category[$iterator->counter-1]->color}" title="{$article_category[$iterator->counter-1]->name}"><img src="{$basePath}/dist/img/{$article_category[$iterator->counter-1]->slug}.svg" alt="{$article_category[$iterator->counter-1]->name}"></a>
+					<a n:href="Section:article $article_category[$iterator->counter-1]->slug, $article->slug" class="article-content">
 
-			<div class="col-lg-3 most-read">
+						<div class="article-image">
+							<span class="article-date">{$article->created|date:'d. m. Y'}</span>
+							<img src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="img-fluid" alt="{$article->title}">
+						</div>
+						<div class="article-text">
+							<h2>{$article->title}</h2>
+							<div n:if="$iterator->first">{$article->perex|stripHtml|noescape}</div>
+						</div>
+					</a>
+				</article>
+			{/if}
+		{/foreach}
+
+		<a class="btn btn-primary load-more-articles-btn btn-lg ma-0 disabled" href="#" role="button">Načíst další články</a>
+
+			<!--
+			<div class="col-xl-3 most-read">
 				<h3>Nejčtenější články</h3>
 
 				<div class="heading">
@@ -46,15 +57,12 @@
 					<h3>Úprava ceníku a provozní doby na koupališti</h3>
 				</div>
 			</div>
-
-		</div>
-
-	</div>
+			-->
 </main>
 
 
 <section id="sections">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row">
 			{foreach $categories as $category}
 				{if !$iterator->first}

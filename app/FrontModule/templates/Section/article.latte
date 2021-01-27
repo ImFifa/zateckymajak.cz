@@ -1,7 +1,15 @@
 {block content}
 
-<section class="article-page" id="article-page">
-	<div class="container">
+<section class="article-page container" id="article-page">
+
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a n:href="Homepage:">Úvod</a></li>
+				<li class="breadcrumb-item"><a n:href="Section: $article_category->slug">{$article_category->name}</a></li>
+				<li class="breadcrumb-item active" aria-current="page">{$article->title}</li>
+			</ol>
+		</nav>
+
 		<h1 n:block="title">{$article->title}</h1>
 		<span>{$article->created|date:'d. m. Y'}</span>
 		<hr>
@@ -33,7 +41,4 @@
 			</div>
 		</div>
 
-
-
-	</div>
 </section>
