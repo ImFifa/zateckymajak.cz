@@ -13,5 +13,4 @@ Nette.initOnLoad();
 window.Nette = Nette;
 
 document.addEventListener("DOMContentLoaded", () => {
-
 });
