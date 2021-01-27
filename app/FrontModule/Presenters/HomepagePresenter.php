@@ -9,11 +9,11 @@ class HomepagePresenter extends BasePresenter
 
 	public function renderDefault(): void
 	{
-		$articles = $this->repository->new->getPublicNews('cs')->limit(5);
+		$articles = $this->repository->new->getPublicNews('cs')->limit(7);
 		$this->template->articles = $articles;
 
 		foreach ($articles as $article) {
-			$category[] = $this->repository->category->getCategoryNameById($article->category_id);
+			$category[] = $this->repository->category->getCategoryById($article->category_id);
 		}
 		$this->template->article_category = $category;
 
