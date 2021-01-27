@@ -1,21 +1,21 @@
 {block content}
 
+<nav class="container-fluid nav-breadcrumb" aria-label="breadcrumb">
+	<ol class="breadcrumb container">
+		<li class="breadcrumb-item"><a n:href="Homepage:">Úvod</a></li>
+		<li class="breadcrumb-item"><a n:href="Section: $article_category->slug">{$article_category->name}</a></li>
+		<li class="breadcrumb-item active" aria-current="page">{$article->title}</li>
+	</ol>
+</nav>
+
 <section class="article-page container" id="article-page">
 
-		<nav aria-label="breadcrumb">
-			<ol class="breadcrumb">
-				<li class="breadcrumb-item"><a n:href="Homepage:">Úvod</a></li>
-				<li class="breadcrumb-item"><a n:href="Section: $article_category->slug">{$article_category->name}</a></li>
-				<li class="breadcrumb-item active" aria-current="page">{$article->title}</li>
-			</ol>
-		</nav>
-
 		<h1 n:block="title">{$article->title}</h1>
-		<span>{$article->created|date:'d. m. Y'}</span>
-		<hr>
-		<div class="content">
+		<span class="date">{$article->created|date:'d. m. Y'}</span>
+		<div class="content article-perex">
 			{$article->perex|noescape}
 		</div>
+
 		<img n:if="$article->cover != NULL" src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="lazyload img-fluid" alt="{$article->title}">
 
 		<div class="content">

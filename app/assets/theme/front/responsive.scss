@@ -33,7 +33,6 @@
 @include media-breakpoint-up(md) {
 
 	.navbar {
-		padding: 0 4rem;
 		align-items: stretch;
 
 		.container {
@@ -65,7 +64,9 @@
 			padding: 1rem 1rem 0 1rem;
 
 			.nav-link {
-				padding: 1rem;
+				background: unset;
+				border-radius: unset;
+				margin: unset;
 			}
 		}
 	}
@@ -85,7 +86,6 @@
 
 @include media-breakpoint-up(lg) {
 	.navbar {
-		padding: 0 130px;
 
 		.navbar-brand {
 			img {
