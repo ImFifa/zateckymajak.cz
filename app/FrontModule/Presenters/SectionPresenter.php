@@ -7,7 +7,11 @@ class SectionPresenter extends BasePresenter
 
 	public function renderDefault($section): void
 	{
-		$this->template->category = $this->repository->category->getCategoryBySlug($section);
+		$category = $this->repository->category->getCategoryBySlug($section);
+		$this->template->category = $category;
+
+		$this->template->articles = $this->repository->new->getPublicNewsByCategory('cs', $category->id);
+		$this->template->categories = $this->repository->category->getCategories();
 	}
 
 	public function renderArticle($section, $slug): void

@@ -1,7 +1,40 @@
 {block content}
 
-<section>
-	<div class="container">
-		<h1 n:block="title">{$category->name}</h1>
-	</div>
+<nav class="container-fluid nav-breadcrumb" aria-label="breadcrumb">
+	<ol class="breadcrumb container">
+		<li class="breadcrumb-item"><a n:href="Homepage:sections">Rubriky</a></li>
+		<li class="breadcrumb-item active" aria-current="page">{$category->name}</li>
+	</ol>
+</nav>
+
+<section id="section-page" class="section-page container">
+
+		<div class="list-of-articles pt-3">
+			<ul class="nav-section">
+				{foreach $categories as $cat}
+					{if !$iterator->first}
+						<li>
+							<a n:href="Section:default $cat->slug" class="hover-3">
+								{$cat->name}
+							</a>
+						</li>
+					{/if}
+				{/foreach}
+			</ul>
+
+			<h1 n:block="title" class="mb-4">{$category->name}</h1>
+
+			{foreach $articles as $article}
+				<article>
+					<a class="article-img" n:if="$article->cover != NULL" n:href="Section:article $category->name, $article->slug">
+						<img src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="img-fluid" alt="{$article->title}">
+					</a>
+					<div class="article-text">
+						<span class="article-date">{$article->created|date:'d. m. Y'}</span>
+						<a n:href="Section:article $category->name, $article->slug"><h3>{$article->title}</h3></a>
+						<div class="article-perex">{$article->perex|noescape}</div>
+					</div>
+				</article>
+			{/foreach}
+		</div>
 </section>

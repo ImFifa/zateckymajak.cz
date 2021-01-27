@@ -20,6 +20,11 @@ class HomepagePresenter extends BasePresenter
 		$this->template->categories = $this->repository->category->getCategories();
 	}
 
+	public function renderSections(): void
+	{
+		$this->template->categories = $this->repository->category->getCategories();
+	}
+
 	public function renderAuthors(): void
 	{
 
