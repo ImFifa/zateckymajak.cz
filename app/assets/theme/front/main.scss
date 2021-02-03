@@ -62,6 +62,17 @@ h1, h2, h3, .navbar-brand, .note, .heading-section, .sec, .nav-link, .created, .
 	.navbar-nav {
 		padding: 1rem;
 
+		.nav-social {
+
+			svg {
+				transition: all .2s ease-in-out;
+			}
+			&:hover svg {
+				transform: scale(1.05);
+				fill: $dark-blue;
+			}
+		}
+
 		.nav-link {
 			// for mobile only
 			background: #ddfbce;
@@ -75,6 +86,12 @@ h1, h2, h3, .navbar-brand, .note, .heading-section, .sec, .nav-link, .created, .
 			font-size: 1.2rem;
 			color: #222;
 			transition: all .15s ease-in-out;
+
+			svg {
+				width: auto;
+				height: 1.2rem;
+				fill: #000;
+			}
 
 			&:hover {
 				color: $dark-blue;
@@ -502,7 +519,7 @@ a:before, a:after, a > span:before, a > span:after {
 		font-family: 'Open Sans', sans-serif;
 	}
 
-	nav, h1, .date, .content {
+	nav, h1, .date, .content, .fb-share-button, .galerie, .soubory {
 		margin: 0 auto;
 		padding: .5rem 1.5rem;
 		width: 100%;
@@ -529,18 +546,23 @@ a:before, a:after, a > span:before, a > span:after {
 			display: flex;
 			flex-direction: row;
 
-			background-color: $background-gray;
+			background-color: $gray-100;
 			border-radius: .3rem;
 			padding: 1rem 1.5rem;
 			margin-bottom: 1.5rem;
 
 			.article-img {
-				max-width: 150px;
+				width: 100%;
+				max-width: 200px;
+				max-height: 200px;
 				height: auto;
 				display: none;
 				margin-right: 2rem;
 
 				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
 					border-radius: .3rem;
 					transition: all .2s ease-in-out;
 
@@ -554,6 +576,71 @@ a:before, a:after, a > span:before, a > span:after {
 				font-size: 16px !important;
 				font-family: 'Open Sans', sans-serif;
 			}
+		}
+	}
+}
+
+// galerie
+.galerie {
+	margin-top: auto;
+
+	.gal-img {
+		justify-content: center;
+		position: relative;
+		padding: 5px;
+
+		img {
+			padding: 0 !important;
+			border-radius: .3rem;
+			max-height: 250px;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			object-position: center 20%;
+		}
+
+		.n-of-photos {
+			position: absolute;
+			border-radius: .3rem;
+			top: 0;
+			left: 0;
+			margin: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			width: calc(100% - 10px);
+			height: calc(100% - 10px);
+			background-color: rgba($black, .4);
+			color: $white;
+			font-size: 2.4rem;
+			font-weight: 400;
+			transition: .25s ease-in;
+
+			small {
+				font-size: 1rem;
+				font-weight: 400;
+			}
+
+			&:hover {
+				background-color: rgba($black, .2);
+				color: rgba($white, .5);
+			}
+		}
+	}
+}
+
+// soubory
+.soubory {
+	.file {
+		margin-right: 1rem;
+		padding: .5rem;
+		border-radius: .3rem;
+		max-width: 100%;
+		background-color: $gray-100;
+
+		embed {
+			border-radius: .3rem;
 		}
 	}
 }

@@ -9,6 +9,7 @@ application:
 
 services:
 	router: App\RouterFactory::createRouter(@repository, @Nette\Http\IRequest)
+	repository: App\Service\ProjectModelRepository
 
 parameters:
 	customTemplatesDir: %appDir%/FrontModule/templates/

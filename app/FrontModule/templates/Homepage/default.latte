@@ -1,7 +1,7 @@
 {block #content}
 <div class="container-fluid bg-gray">
 	<main id="articles" class="container">
-			<h1 class="note">Novinky, pozvánky, zprávy - webové stránky všech Žatečanů</h1>
+		<h1 class="note">Informační web pro všechny Žatečany</h1>
 
 			{foreach $articles as $article}
 				{if $iterator->first}
@@ -32,11 +32,6 @@
 					</article>
 				{/if}
 			{/foreach}
-
-			<!-- todo show more articles
-			<a class="btn btn-primary load-more-articles-btn btn-lg ma-0 disabled" href="#" role="button">Načíst další články</a>
-			-->
-
 
 				<!-- todo most read articles
 				<div class="col-xl-3 most-read">

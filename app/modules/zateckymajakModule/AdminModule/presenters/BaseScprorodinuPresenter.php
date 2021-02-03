@@ -2,7 +2,7 @@
 
 namespace App\AdminModule\Presenters;
 
-use App\Service\ProjectModelRepository;
+use App\Services\ProjectModelRepository;
 
 /**
  * @property-read ProjectModelRepository $repository

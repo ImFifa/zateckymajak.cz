@@ -6,7 +6,7 @@ use App\Grid\ServiceGrid;
 use App\Grid\IServiceGridFactory;
 use DateTime;
 use Nette\Application\UI\Form;
-use App\Service\Helpers;
+use App\Services\Helpers;
 use Nette\Database\Table\ActiveRow;
 use Nette\Http\FileUpload;
 use Nette\Utils\Strings;

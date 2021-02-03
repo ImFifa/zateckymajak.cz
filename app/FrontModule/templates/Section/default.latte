@@ -24,17 +24,41 @@
 
 			<h1 n:block="title" class="mb-4">{$category->name}</h1>
 
-			{foreach $articles as $article}
-				<article>
-					<a class="article-img" n:if="$article->cover != NULL" n:href="Section:article $category->name, $article->slug">
-						<img src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="img-fluid" alt="{$article->title}">
-					</a>
-					<div class="article-text">
-						<span class="article-date">{$article->created|date:'d. m. Y'}</span>
-						<a n:href="Section:article $category->name, $article->slug"><h3>{$article->title}</h3></a>
-						<div class="article-perex">{$article->perex|noescape}</div>
-					</div>
-				</article>
-			{/foreach}
+			{if count($articles) > 0}
+
+				{foreach $articles as $article}
+					<article>
+						<a class="article-img" n:if="$article->cover != NULL" n:href="Section:article $category->slug, $article->slug">
+							<img src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="img-fluid" alt="{$article->title}">
+						</a>
+						<div class="article-text">
+							<span class="article-date">{$article->created|date:'d. m. Y'}</span>
+							<a n:href="Section:article $category->slug, $article->slug"><h3>{$article->title}</h3></a>
+							<div class="article-perex">{$article->perex|noescape}</div>
+						</div>
+					</article>
+				{/foreach}
+
+				<div class="pagination">
+					{if !$paginator->isFirst()}
+						<a n:href="default, $category->slug, 1">První</a>
+						&nbsp;|&nbsp;
+						<a n:href="default, $category->slug, $paginator->page-1">Předchozí</a>
+						&nbsp;|&nbsp;
+					{/if}
+
+						Stránka {$paginator->page} z {$paginator->pageCount}
+
+            {if !$paginator->isLast()}
+						&nbsp;|&nbsp;
+						<a n:href="Section:default, $category->slug, $paginator->page+1">Další</a>
+						&nbsp;|&nbsp;
+						<a n:href="Section:default, $category->slug, $paginator->pageCount">Poslední</a>
+					{/if}
+				</div>
+
+			{else}
+				<h4>Na webu aktuálně nejsou žádné zveřejněné články ze sekce {$category->name}.</h4>
+			{/if}
 		</div>
 </section>

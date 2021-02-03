@@ -6,7 +6,7 @@ use App\Grid\EventGrid;
 use App\Grid\IEventGridFactory;
 use DateTime;
 use Nette\Application\UI\Form;
-use App\Service\Helpers;
+use App\Services\Helpers;
 use Nette\Database\SqlLiteral;
 use Nette\Database\Table\ActiveRow;
 use Nette\Http\FileUpload;
