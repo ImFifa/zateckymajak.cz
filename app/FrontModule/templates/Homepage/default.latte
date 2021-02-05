@@ -8,7 +8,7 @@
 					<article class="newest-article">
 						<a n:href="Section:default $article_category[$iterator->counter-1]->slug" class="article-section bg-{$article_category[$iterator->counter-1]->color}" title="{$article_category[$iterator->counter-1]->name}"><img src="{$basePath}/dist/img/{$article_category[$iterator->counter-1]->slug}.svg" alt="{$article_category[$iterator->counter-1]->name}"></a>
 						<a n:href="Section:article $article_category[$iterator->counter-1]->slug, $article->slug" class="article-content" style="background: url('{$basePath}/upload/news/{$article->id}/{$article->cover}'); background-size: cover; background-position: center center; justify-content: flex-end;">
-							<div class="article-text" style="background: rgba(255,255,255,.6); padding-bottom: 2.5rem;">
+							<div class="article-text">
 								<h2 class="article-new">{$article->title}</h2>
 								<div class="article-perex" n:if="$iterator->first">{$article->perex|stripHtml|noescape}</div>
 							</div>
@@ -63,14 +63,12 @@
 		<div class="container">
 			<div class="row">
 				{foreach $categories as $category}
-					{if !$iterator->first}
 						<a n:href="Section:default $category->slug" class="sec col-md-6 col-lg-4 col-xl-2">
 							<div class="bg bg-{$category->color}">
 								<img src="{$basePath}/dist/img/{$category->slug}.svg" alt="{$category->name}">
 								{$category->name}
 							</div>
 						</a>
-					{/if}
 				{/foreach}
 			</div>
 		</div>

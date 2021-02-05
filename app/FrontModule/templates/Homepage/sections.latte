@@ -9,14 +9,12 @@
 
 	<div class="row pt-3">
 		{foreach $categories as $category}
-			{if !$iterator->first}
 				<a n:href="Section:default $category->slug" class="sec col-md-6 col-lg-4 col-xl-2">
 					<div class="bg bg-{$category->color}">
 						<img src="{$basePath}/dist/img/{$category->slug}.svg" alt="{$category->name}">
 						{$category->name}
 					</div>
 				</a>
-			{/if}
 		{/foreach}
 	</div>
 </section>

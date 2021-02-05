@@ -12,13 +12,11 @@
 		<div class="list-of-articles pt-3">
 			<ul class="nav-section">
 				{foreach $categories as $cat}
-					{if !$iterator->first}
 						<li>
 							<a n:href="Section:default $cat->slug" class="hover-3">
 								{$cat->name}
 							</a>
 						</li>
-					{/if}
 				{/foreach}
 			</ul>
 
