@@ -12,7 +12,7 @@ class SectionPresenter extends BasePresenter
 		$vars = $this->configuration;
 		$itemsPerPage = (int) $vars->itemsPerPage;
 
-		$category = $this->repository->category->getCategoryBySlug($section);
+		$category = $this->repository->getCategoryBySlug($section);
 		$this->template->category = $category;
 
 		$articlesCount = $this->repository->getPublicNewsByCategoryCount('cs', $category->id);
@@ -24,15 +24,20 @@ class SectionPresenter extends BasePresenter
 
 		$this->template->articles = $this->repository->getPublicNewsByCategory('cs', $category->id, $paginator->getLength(), $paginator->getOffset());
 		$this->template->paginator = $paginator;
-		$this->template->categories = $this->repository->category->getCategories();
+		$this->template->categories = $this->repository->getCategories();
 	}
 
 	public function renderArticle($section, $slug): void
 	{
 		$article = $this->repository->new->getNew($slug, 'cs');
+
+
+		if (isset($article->perex))
+			$this->template->perex = strip_tags($article->perex);
+
 		$this->template->article = $article;
 
-		$this->template->article_category = $this->repository->category->getCategoryById($article->category_id);
+		$this->template->article_category = $this->repository->getCategoryById($article->category_id);
 
 		if ($article->gallery_id != NULL)
 			$this->template->images = $this->repository->image->getImagesByGallery($article->gallery_id);

@@ -9,21 +9,21 @@ class HomepagePresenter extends BasePresenter
 		$vars = $this->configuration;
 
 		$nOfArticles = (int) $vars->articlesCount;
-		$articles = $this->repository->new->getPublicNews('cs')->limit($nOfArticles);
+		$articles = $this->repository->getPublicNews('cs')->limit($nOfArticles);
 		$this->template->articles = $articles;
 		$this->template->nOfArticles = $nOfArticles + 4;
 
 		foreach ($articles as $article) {
-			$category[] = $this->repository->category->getCategoryById($article->category_id);
+			$category[] = $this->repository->getCategoryById($article->category_id);
 		}
 		$this->template->article_category = $category;
 
-		$this->template->categories = $this->repository->category->getCategories();
+		$this->template->categories = $this->repository->getCategories();
 	}
 
 	public function renderSections(): void
 	{
-		$this->template->categories = $this->repository->category->getCategories();
+		$this->template->categories = $this->repository->getCategories();
 	}
 
 	public function renderAuthors(): void

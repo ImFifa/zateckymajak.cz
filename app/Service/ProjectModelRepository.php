@@ -16,6 +16,8 @@ use Nette\Database\Table\Selection;
 class ProjectModelRepository extends ModelRepository
 {
 
+
+	// FILE
 	public function getFolder(int $folder_id): ActiveRow
 	{
 		return $this->folder->getTable('folder')->where('id', $folder_id)->fetch();
@@ -24,6 +26,17 @@ class ProjectModelRepository extends ModelRepository
 	public function getFilesByFolderId(int $folder_id): array
 	{
 		return $this->file->getTable('file')->where('folder_id', $folder_id)->order('id DESC')->fetchAll();
+	}
+
+	// NEWS
+	public function getNew($slug, $lang): ?ActiveRow
+	{
+		return $this->new->getTable()->where('public', 1)->where('lang', $lang)->where('slug', $slug)->fetch();
+	}
+
+	public function getPublicNews(string $lang): Selection
+	{
+		return $this->new->getTable()->where('public', 1)->where('lang', $lang)->order('created DESC')->order('id DESC');
 	}
 
 	public function getPublicNewsByCategoryCount(string $lang, int $category_id): int
@@ -41,5 +54,20 @@ class ProjectModelRepository extends ModelRepository
 		return $this->new->getTable()->where('public', 1)->where('lang', $lang)->where('category_id', $category_id)->order('created DESC')->limit($limit, $offset);
 	}
 
+	// CATEGORY
+	public function getCategories(): array
+	{
+		return $this->category->getTable()->fetchAll();
+	}
+
+	public function getCategoryById($id): ActiveRow
+	{
+		return $this->category->getTable()->where('id', $id)->fetch();
+	}
+
+	public function getCategoryBySlug($slug): ActiveRow
+	{
+		return $this->category->getTable()->where('slug', $slug)->fetch();
+	}
 
 }

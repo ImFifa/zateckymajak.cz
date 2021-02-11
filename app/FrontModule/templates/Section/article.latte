@@ -1,7 +1,7 @@
 {block content}
 
 {block #og}
-	<meta property="og:title" content="{$article->title} | Žatecký maják">
+	<meta property="og:title" content="{$article->title}">
 	<meta property="og:url" content="{$baseUrl}{plink this}" />
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="
@@ -12,7 +12,10 @@
 	{/ifset}">
 		<meta property="og:description" content="
 	{ifset $article->perex}
-		{$article->perex}
+		{ifset $article->created}
+			{$article->created|date:'d. m. Y'} |
+		{/ifset}
+		{$perex|truncate:50}
 	{else}
 		{$vars->description}
 	{/ifset}">
