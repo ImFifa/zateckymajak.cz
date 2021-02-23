@@ -16,6 +16,10 @@
 		.newest-article {
 			margin-top: 0;
 			grid-area: article-new;
+
+			.article-text {
+				padding-top: unset !important;
+			}
 		}
 		.note {
 			grid-area: header;
@@ -92,6 +96,11 @@
 		"article-5 article-6 article-7"
 		"btn btn btn";
 	}
+
+	.documents {
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 3rem;
+	}
 }
 
 
@@ -163,6 +172,10 @@
 		"article-new article-new article-2 article-3"
 		"article-4 article-5 article-6 article-7"
 		"btn btn btn btn";
+	}
+
+	.documents {
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 
 }

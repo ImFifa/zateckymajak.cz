@@ -1,82 +1,70 @@
 {block #title}
-    {$event === null ? 'Přidat událost' : ('Upravit ' . $event['name'] )}
+    {$article === null ? 'Tvorba' : 'Úprava'} článku
 {/block}
 
 {block #buttons}
     <a href="#" class="btn btn-primary" onclick="triggerClick('.btn-save')">Uložit</a>
-    <a n:if="isset($event)" n:href=":Project:Event:show $event['slug']" class="btn btn-info">Zobrazit na webu</a>
     <a n:href="default" class="btn btn-light"><i class="fa fa-arrow-left"></i> Zpět</a>
 {/block}
 
-{block #content}
-
+{block content}
     <div class="container-fluid bg-white">
         <div class="row">
             <div class="col-lg-8">
                 {snippet cover}
-                    {form eventForm}
+                    {form editForm}
                         <div class="row">
-                            <div class="col-lg-8">
-                                <div class="form-group">
-                                    {label name}{/label}
-                                    {input name class => 'form-control'}
-                                </div>
-                            </div>
-
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    {label date}{/label}
-                                    {input date class => 'form-control form-date'}
+                                    {label title}{/label}
+                                    {input title class => 'form-control'}
                                 </div>
                             </div>
-
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    {label location}{/label}
-                                    {input location class => 'form-control'}
-                                </div>
-                            </div>
-
-
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    {label price}{/label}
-                                    {input price class => 'form-control'}
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4">
-                                <div class="form-group">
-                                    {label capacity}{/label}
-                                    {input capacity class => 'form-control'}
-                                </div>
-                            </div>
-
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     {label category_id}{/label}
                                     {input category_id class => 'form-control'}
                                 </div>
                             </div>
-
-
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    {label gallery_id}{/label}
-                                    {input gallery_id class => 'form-control'}
+                                    {label created}{/label}
+                                    {input created class => 'form-control form-date'}
                                 </div>
                             </div>
-
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     {label image}{/label}
                                     {input image class => 'form-control'}
                                 </div>
                             </div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									{label gallery_id}{/label}
+                                    {input gallery_id class => 'form-control'}
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									{label folder_id}{/label}
+                                    {input folder_id class => 'form-control'}
+								</div>
+							</div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    {label lang}{/label}
+                                    {input lang class => 'form-control'}
+                                </div>
+                            </div>
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <h4 class="mt-5">{label content}{/label}</h4>
-                                    <hr>
+                                    {label perex}{/label}
+                                    {input perex}
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    {label content}{/label}
                                     {input content}
                                 </div>
                             </div>
@@ -97,12 +85,12 @@
                 <div class="mb-2">
                     Náhledový obrázek
                 </div>
-                {if isset($event) && $event['cover'] != ""}
-                    {var $imageLink = "upload/events/" . $event['id'] . "/" . $event['cover']}
+                {if isset($article) && $article['cover'] != ""}
+                    {var $imageLink = "upload/articles/" . $article['id'] . "/" . $article['cover']}
                     <img class="img-fluid" src="{$basePath}/{$imageLink}?v={time()}" alt="" />
                     <div class="text-center mt-3">
                         <a href="{$imageLink|cropper:$vars->newAspectRatio}" class="btn btn-outline-primary">Upravit obrázek</a>
-                        <a n:if="isset($event) && $event['cover'] != ''" n:href="deleteImage! $event['id']"
+                        <a n:if="isset($article) && $article['cover'] != ''" n:href="deleteImage! $article['id']"
                                 data-confirm="modal"
                                 data-confirm-title="Smazání obrázku"
                                 data-confirm-text="Opravdu chcete smazat tento obrázek?"

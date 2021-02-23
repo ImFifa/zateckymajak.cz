@@ -23,6 +23,7 @@ class RouterFactory
 		$router->withModule('Front')->addRoute('[<lang=cs (cs)>/]redakce', 'Homepage:authors');
 		$router->withModule('Front')->addRoute('[<lang=cs (cs)>/]kontakt', 'Homepage:contact');
 		$router->withModule('Front')->addRoute('[<lang=cs (cs)>/]mapa-stranek', 'Homepage:sitemap');
+		$router->withModule('Front')->addRoute('[<lang=cs (cs)>/]dokumenty', 'Homepage:documents');
 
 		$router->withModule('Front')->addRoute('[<lang=cs (cs)>/]<section>[/<page [0-9]>]', 'Section:default');
 		$router->withModule('Front')->addRoute('[<lang=cs (cs)>/]<section>/<slug>', 'Section:article');

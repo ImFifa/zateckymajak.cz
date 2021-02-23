@@ -2,6 +2,10 @@
 
 namespace App\FrontModule\Presenters;
 
+/**
+* * @property-read \App\Model\FolderModel $folder
+**/
+
 class HomepagePresenter extends BasePresenter
 {
 	public function renderDefault(): void
@@ -29,6 +33,17 @@ class HomepagePresenter extends BasePresenter
 	public function renderAuthors(): void
 	{
 
+	}
+
+	public function renderDocuments(): void
+	{
+		$this->template->folder_zpravodajstvi = $this->repository->getFilesByFolderId(5);
+		$this->template->folder_sluzby = $this->repository->getFilesByFolderId(6);
+		$this->template->folder_kultura = $this->repository->getFilesByFolderId(7);
+		$this->template->folder_sport = $this->repository->getFilesByFolderId(8);
+		$this->template->folder_vzdelavani = $this->repository->getFilesByFolderId(9);
+		$this->template->folder_blogy = $this->repository->getFilesByFolderId(10);
+		$this->template->filetypes = ['doc', 'docx', 'jpeg', 'jpg', 'pdf', 'png', 'ppt', 'pptx', 'txt', 'xls', 'xlsx'];
 	}
 
 	public function renderContact(): void

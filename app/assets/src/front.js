@@ -25,5 +25,12 @@ import Nette from "@/front/netteForms";
 Nette.initOnLoad();
 window.Nette = Nette;
 
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag("js", new Date());
+
+gtag("config", "G-7ZCRCBXDYX");
+
 document.addEventListener("DOMContentLoaded", () => {
 });
+

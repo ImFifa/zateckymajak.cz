@@ -7,7 +7,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
     php composer-setup.php --install-dir=/bin \
     php -r "unlink('composer-setup.php');"
 
-RUN docker-php-ext-install pdo_mysql gd iconv zip
+RUN docker-php-ext-install pdo_mysql mysqli gd iconv zip
 
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 

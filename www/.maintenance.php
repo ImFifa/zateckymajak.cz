@@ -35,31 +35,19 @@ header('Retry-After: 300'); // 5 minutes in seconds
 			}
 
 			.content img {
-				height: 50px;
+				height: 120px;
 			}
 		</style>
 	</head>
 	<body>
 	<div class="background">
 		<div class="overlay"></div>
-
-		<?php if (strpos($_SERVER['HTTP_HOST'], 'box') === false) { ?>
-			<div class="img" style="background-image: url('/dist/img/bg.jpg'); background-size: cover;"></div>
-		<?php } else { ?>
-			<div class="img" style="background-image: url('/upload/show/2/bg.jpg'); background-size: cover;"></div>
-		<?php } ?>
-
 	</div>
 
 	<div class="content">
 
-		<?php if (strpos($_SERVER['HTTP_HOST'], 'box') === false) { ?>
-			<img src="/dist/img/logo_white.svg" alt="Livesignal.tv - Logo">
-		<?php } else { ?>
-			<img src="/upload/show/2/logo_nobrand.png" alt="BOXING LUCERNA - Logo">
-		<?php } ?>
-
-		<h1 class="my-5">Omlouváme se</h1>
+		<img src="/dist/img/logo.svg" alt="Žatecký maják">
+		<h1 class="mt-3 mb-4">Omlouváme se</h1>
 		<p>
 			Právě aktualizujeme webovou aplikaci a proto není dostupná.<br />
 			Zkuste to znovu za několik minut.<br />

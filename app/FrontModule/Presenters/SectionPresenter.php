@@ -29,8 +29,7 @@ class SectionPresenter extends BasePresenter
 
 	public function renderArticle($section, $slug): void
 	{
-		$article = $this->repository->new->getNew($slug, 'cs');
-
+		$article = $this->repository->article->getNew($slug, 'cs');
 
 		if (isset($article->perex))
 			$this->template->perex = strip_tags($article->perex);
@@ -45,6 +44,7 @@ class SectionPresenter extends BasePresenter
 		if ($article->folder_id != NULL) {
 			$this->template->folder = $this->repository->getFolder($article->folder_id);
 			$this->template->files = $this->repository->getFilesByFolderId($article->folder_id);
+			$this->template->filetypes = ['doc', 'docx', 'jpeg', 'jpg', 'pdf', 'png', 'ppt', 'pptx', 'txt', 'xls', 'xlsx'];
 		}
 
 		$url = $this->getHttpRequest()->getUrl()->getAbsoluteUrl();

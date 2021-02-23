@@ -1,0 +1,19 @@
+<div class="card shadow border-0 h-100">
+	<div class="card-body">
+		<h5 class="card-title">Modul Články</h5>
+		<p class="card-text">
+			{if $count === 0}
+				Doposud nebyl vytvořen žádný článek
+			{else}
+				V aplikaci se nachází {$count} {$count|plural:'článek':'články':'článků'}<br />
+            {/if}
+			{if $lastArticle}
+				Poslední byl vytvořen {$lastArticle->created|date:'j.n.Y'}
+			{/if}
+		</p>
+	</div>
+	<div class="card-footer bg-white border-0 pt-0">
+		<a n:if="$count > 0" href="{plink :Admin:Article:default}" class="btn btn-outline-primary btn-sm">Přehled článků</a>
+		<a href="{plink :Admin:Article:edit}" class="btn btn-outline-success btn-sm">Napsat článek</a>
+	</div>
+</div>

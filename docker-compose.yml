@@ -28,7 +28,7 @@ services:
       VIRTUAL_HOST: db.zateckymajak.localhost
 
   php:
-    image: nette-php7.4
+    image: php74-apache
     networks:
       - nginx_proxy_network
     expose:

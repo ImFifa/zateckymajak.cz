@@ -11,11 +11,27 @@ services:
 	router: App\RouterFactory::createRouter(@repository, @Nette\Http\IRequest)
 	repository: App\Service\ProjectModelRepository
 
+	# Models
+	- App\Model\CategoryModel
+	- App\Model\ArticleModel
+	# Grids
+	- App\Grid\IArticleGridFactory
+	# Dashboard
+	admin.dashboard.articlepanel: App\Dashboard\ArticlePanel\IArticlePanel
+
 parameters:
 	customTemplatesDir: %appDir%/FrontModule/templates/
+	admin:
+		menu:
+			Články: [':Admin:Article:', pencil]
 
 migrations:
 	groups:
 		project.structure:
 			directory: %appDir%/migrations/structure
+		article.structure:
+			directory: %appDir%/migrations/structure
+			dependencies: [gallery.structure]
+		article.data.basic:
+			directory: %appDir%/migrations/data/basic
 

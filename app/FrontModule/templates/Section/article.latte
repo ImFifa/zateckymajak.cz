@@ -65,9 +65,12 @@
 			<h3 id="soubory">Soubory</h3>
 			<div class="row no-gutters">
 				{foreach $files as $file}
-						<a href="{$basePath}/upload/files/{$folder->slug}/{$file->path}" target="_blank" class="file" alt="{$file->name}">
+						<a href="{$basePath}/upload/files/{$folder->slug}/{$file->path}" target="_blank" class="file">
+
+							{foreach $filetypes as $filetype}
+								<img n:if="$filetype === $file->type" src="{$basePath}/dist/img/filetypes/{$file->type}.svg" alt="{$file->name}">
+							{/foreach}
 							<h6>{$file->name}</h6>
-							<embed src="{$basePath}/upload/files/{$folder->slug}/{$file->path}"/>
 						</a>
 				{/foreach}
 			</div>

@@ -30,6 +30,9 @@
 						<a class="nav-link hover-3" n:href="Homepage:sections">Rubriky</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link hover-3" n:href="Homepage:documents">Dokumenty</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link hover-3" n:href="Homepage:authors">Redakce</a>
 					</li>
 					<li class="nav-item">
@@ -62,8 +65,9 @@
 				<h3>Žatecký maják</h3>
 				<ul>
 					<li><a class="hover-3" n:href="Homepage:default">Úvodní stránka</a></li>
-					<li><a class="hover-3" n:href="Homepage:authors">Redakce</a></li>
 					<li><a class="hover-3" n:href="Homepage:sections">Rubriky</a></li>
+					<li><a class="hover-3" n:href="Homepage:documents">Dokumenty</a></li>
+					<li><a class="hover-3" n:href="Homepage:authors">Redakce</a></li>
 					<li><a class="hover-3" n:href="Homepage:contact">Kontakt</a></li>
 					<li><a class="hover-3" n:href="Homepage:sitemap">Mapa stránek</a></li>
 				</ul>
@@ -129,7 +133,18 @@
 	<meta name="msapplication-config" content="{$basePath}/dist/favicon/browserconfig.xml">
 	<meta name="theme-color" content="#ffffff">
 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-7ZCRCBXDYX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){ dataLayer.push(arguments) ;}
+		gtag('js', new Date());
+
+		gtag('config', 'G-7ZCRCBXDYX');
+	</script>
+
 	<link rel="stylesheet" href="{$basePath}/dist/front.bundle.css?{filemtime(WWW . '/dist/front.bundle.css')}" type="text/css">
+
 {/block}
 
 {block #foot}

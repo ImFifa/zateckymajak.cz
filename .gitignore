@@ -11,3 +11,4 @@ www/dist/*
 /resources
 .data
 .docker
+.DS_Store
