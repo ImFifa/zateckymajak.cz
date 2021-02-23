@@ -3,12 +3,12 @@
 
 		<div class="scrollmenu container">
 			<a class="bg-g100" href="Section:">Rubriky:</a>
-			<a class="bg-blue" n:href="Section: zpravodajstvi">Zpravodajství</a>
-			<a class="bg-red" n:href="Section: sluzby-a-spolky">Služby a spolky</a>
-			<a class="bg-orange" n:href="Section: kultura-a-historie">Kultura a historie</a>
-			<a class="bg-green" n:href="Section: sport">Sport</a>
-			<a class="bg-purple" n:href="Section: vzdelavani">Vzdělávání</a>
-			<a class="bg-yellow" n:href="Section: blogy">Blogy</a>
+			{foreach $categories as $category}
+				<a n:href="Section: $category->slug" class="bg-{$category->color}">
+						<img src="{$basePath}/dist/img/{$category->slug}.svg" alt="{$category->name}">
+						{$category->name}
+				</a>
+			{/foreach}
 		</div>
 
 		<main id="articles" class="container">

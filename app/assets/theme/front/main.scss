@@ -114,6 +114,7 @@ section {
 }
 
 #articles {
+	padding: 0;
 	display: grid;
 	justify-items: stretch;
 	gap: 1.5rem 1.5rem;
@@ -272,6 +273,7 @@ section {
 }
 
 #sections {
+	display: none;
 	padding: 1rem 0;
 	background-color: $white;
 }
@@ -340,7 +342,7 @@ section {
 }
 
 #about {
-	margin-bottom: 0;
+	margin-top: 4rem;
 
 	.container {
 		background-color: $white;
@@ -768,6 +770,11 @@ a:before, a:after, a > span:before, a > span:after {
 	overflow: auto;
 	white-space: nowrap;
 	position: relative;
+
+	img {
+		max-width: 30px;
+		margin-right: .5rem;
+	}
 
 	a {
 		font-weight: 700;
