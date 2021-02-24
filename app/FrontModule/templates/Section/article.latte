@@ -6,7 +6,7 @@
 	<meta property="og:type" content="website">
 	<meta property="og:image" content="
 	{ifset $article->cover}
-		{$baseUrl}/upload/news/{$article->id}/{$article->cover}
+		{$baseUrl}/upload/articles/{$article->id}/{$article->cover}
 	{else}
 		{$vars->og_image}
 	{/ifset}">
@@ -36,7 +36,7 @@
 			{$article->perex|noescape}
 		</div>
 
-		<img n:if="$article->cover != NULL" src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="lazyload img-fluid" alt="{$article->title}">
+		<img n:if="$article->cover != NULL" src="{$basePath}/upload/articles/{$article->id}/{$article->cover}" class="lazyload img-fluid" alt="{$article->title}">
 
 		<div class="content">
 			{$article->content|noescape}

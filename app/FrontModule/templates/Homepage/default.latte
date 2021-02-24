@@ -18,7 +18,7 @@
 				{if $iterator->first}
 					<article class="newest-article">
 						<a n:href="Section:default $article_category[$iterator->counter-1]->slug" class="article-section bg-{$article_category[$iterator->counter-1]->color}" title="{$article_category[$iterator->counter-1]->name}"><img src="{$basePath}/dist/img/{$article_category[$iterator->counter-1]->slug}.svg" alt="{$article_category[$iterator->counter-1]->name}"></a>
-						<a n:href="Section:article $article_category[$iterator->counter-1]->slug, $article->slug" class="article-content" style="background: url('{$basePath}/upload/news/{$article->id}/{$article->cover}'); background-size: cover; background-position: center center; justify-content: flex-end;">
+						<a n:href="Section:article $article_category[$iterator->counter-1]->slug, $article->slug" class="article-content" style="background: url('{$basePath}/upload/articles/{$article->id}/{$article->cover}'); background-size: cover; background-position: center center; justify-content: flex-end;">
 							<div class="article-text">
 								<h2 class="article-new">{$article->title}</h2>
 								<div class="article-perex" n:if="$iterator->first">{$article->perex|stripHtml|noescape}</div>
@@ -33,7 +33,7 @@
 
 							<div class="article-image">
 								<span class="article-date">{$article->created|date:'d. m. Y'}</span>
-								<img src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="img-fluid" alt="{$article->title}">
+								<img src="{$basePath}/upload/articles/{$article->id}/{$article->cover}" class="img-fluid" alt="{$article->title}">
 							</div>
 							<div class="article-text">
 								<h2>{$article->title}</h2>
@@ -43,30 +43,6 @@
 					</article>
 				{/if}
 			{/foreach}
-
-			<!-- todo most read articles
-				<div class="col-xl-3 most-read">
-					<h3>Nejčtenější články</h3>
-
-					<div class="heading">
-						<img src="{$basePath}/dist/img/img06.png" alt="Letní kino" class="img-fluid">
-						<span class="heading-section">Zpravodajství</span>
-						<h3>Od července se ruší online objednávky do Letního kina</h3>
-					</div>
-					<div class="heading">
-						<span class="heading-section">Spolky</span>
-						<h3>Začala soutěž o Strom roku</h3>
-					</div>
-					<div class="heading">
-						<span class="heading-section">Vzdělávání</span>
-						<h3>Univerzita severu se zajímá o Přírodovědné centrum v Žatci</h3>
-					</div>
-					<div class="heading">
-						<span class="heading-section">Zpravodajství</span>
-						<h3>Úprava ceníku a provozní doby na koupališti</h3>
-					</div>
-				</div>
-				-->
 		</main>
 
 

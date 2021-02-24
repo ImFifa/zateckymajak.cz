@@ -27,7 +27,7 @@
 				{foreach $articles as $article}
 					<article>
 						<a class="article-img" n:if="$article->cover != NULL" n:href="Section:article $category->slug, $article->slug">
-							<img src="{$basePath}/upload/news/{$article->id}/{$article->cover}" class="img-fluid" alt="{$article->title}">
+							<img src="{$basePath}/upload/articles/{$article->id}/{$article->cover}" class="img-fluid" alt="{$article->title}">
 						</a>
 						<div class="article-text">
 							<span class="article-date">{$article->created|date:'d. m. Y'}</span>
